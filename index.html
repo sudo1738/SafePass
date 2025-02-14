@@ -107,23 +107,19 @@
         updateCountdown();
 
         downloadBtn.addEventListener('click', () => {
-            // Simulating file download
-            const fileName = "BeatShare_Pro_Studio.zip";
-            const fileContent = "This is a simulated file content for BeatShare Pro Studio.";
-            
-            const blob = new Blob([fileContent], { type: 'application/octet-stream' });
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = fileName;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+    const fileName = "RAGER.mp3";
+    const fileUrl = "/" + fileName; // Assumes the file is in the root directory
+    
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 
-            alert("Your download has started!");
-        });
+    alert("Your download of " + fileName + " has started!");
+});
+
     </script>
 </body>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2330891452848767"
